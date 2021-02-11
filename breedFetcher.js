@@ -29,9 +29,9 @@ request(breedSearchPage + catNameInCL, (error, response, body) => {
     // console.log(typeof body); // this is a string
     console.log('This breed is not found');
   } else {
+    const data = JSON.parse(body); // we use JSON.parse to convert it to an object
     // console.log(data);
     // console.log(typeof data); // now we can see it's an object
-    const data = JSON.parse(body); // we use JSON.parse to convert it to an object
     console.log(data[0].description); //accessing the first entry in the data array, and printing out the description
   }
 });
